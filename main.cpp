@@ -343,10 +343,10 @@ int main(void)
 		cout << endl << "目标目录为:" << GenshinPath << endl;
 
 		//生成cmd命令,重命名文件夹;
-		string dos0 = "ren \"" + GenshinPath + "00\" " + "01";
-		string dos1 = "rd /s /q \"" + GenshinPath + "01\"";
-		string path0 = GenshinPath + "01";
-		string path1 = GenshinPath + "00";
+		string dos0 = "ren \"" + GenshinPath + "00\\29342328.blk\" " + "29342328.blks";
+		string dos1 = "rd /s /q \"" + GenshinPath + "00\\29342328.blks\"";
+		string path0 = GenshinPath + "00\\29342328.blks";
+		string path1 = GenshinPath + "00\\29342328.blk";
 		if (0 == access(path0.data(), 0))
 			system(dos1.data());
 		if (0 == access(path1.data(), 0))
@@ -357,7 +357,7 @@ int main(void)
 		TCHAR DesktopPath[MAX_PATH] = { 0 };
 		SHGetSpecialFolderPath(0, DesktopPath, CSIDL_DESKTOPDIRECTORY, 0);
 		string Desktop = UnicodeToAnsi(DesktopPath);
-		Desktop = Desktop + "\\Debug.bat";
+		Desktop = Desktop + "\\GenshinDebug.bat";
 		ofstream outfile;
 		outfile.open(Desktop, std::ios::out | std::ios::app);//生成空的批处理文件
 		if (!outfile)
