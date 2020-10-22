@@ -344,7 +344,7 @@ int main(void)
 
 		//生成cmd命令,重命名文件夹;
 		string dos0 = "ren \"" + GenshinPath + "00\\29342328.blk\" " + "29342328.blks";
-		string dos1 = "rd /s /q \"" + GenshinPath + "00\\29342328.blks\"";
+		string dos1 = "del /f /s /q \"" + GenshinPath + "00\\29342328.blks\"";
 		string path0 = GenshinPath + "00\\29342328.blks";
 		string path1 = GenshinPath + "00\\29342328.blk";
 		if (0 == access(path0.data(), 0))
